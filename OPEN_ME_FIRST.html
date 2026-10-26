@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10171c"><title>AEGIS / Airspace Operations</title><style>
+:root{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#e8ecef;background:#10161b;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid #d5a77d;outline-offset:2px}.app{min-height:100vh}.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;background:#151d23;border-bottom:1px solid #344049;padding:0 26px;gap:16px}.brand{display:flex;align-items:center;gap:12px;min-width:240px}.mark{background:#d3a47e;color:#10161b;font-size:31px;font-weight:1000;width:45px;height:45px;display:grid;place-items:center;letter-spacing:-6px;padding-right:6px}.mark span{color:#10161b}.brand strong{display:block;font-size:22px;letter-spacing:2.5px;font-weight:900}.brand small{display:block;color:#93a0aa;font-size:9px;letter-spacing:2.3px;font-weight:850;margin-top:5px}.head-center{display:flex;align-items:center;gap:11px;white-space:nowrap}.head-center b{font-size:11px;letter-spacing:.7px}.eyebrow{font-size:10px;letter-spacing:1.6px;font-weight:900;color:#8999a5}.header-divider{height:16px;width:1px;background:#45535e;margin:0 11px}.head-right{display:flex;align-items:center;gap:22px;white-space:nowrap}.connection{font-size:11px;font-weight:900;color:#b6c5d0;letter-spacing:.6px}#onlineDot,.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#a7bd99;margin-right:7px;box-shadow:0 0 0 3px #a7bd9916}.clock{font:700 12px ui-monospace,SFMono-Regular,Consolas,monospace;color:#e0e8ed}.layout{display:grid;grid-template-columns:230px minmax(460px,1fr)312px;min-height:calc(100vh - 76px)}.sidebar{background:#182127;border-right:1px solid #33414c;display:flex;flex-direction:column;padding:28px 13px 20px;min-width:0}.sidebar-top{padding:0 15px 25px;border-bottom:1px solid #33414c}.sidebar-top strong{display:block;margin-top:6px;font-size:16px;letter-spacing:.9px}.group-heading{font-size:10px;font-weight:900;letter-spacing:1.5px;color:#758793;padding:20px 14px 11px}.group-heading.spaced{margin-top:12px}.side-item{height:43px;border:0;border-left:3px solid transparent;border-radius:0;background:transparent;color:#bdc8ce;display:flex;align-items:center;gap:11px;text-align:left;width:100%;font-size:12px;font-weight:800;padding:0 11px}.side-item:hover{background:#26323a}.side-item.selected{border-left-color:#d8a47f;color:#fff;background:#29343b}.side-item>b,.side-item>span:last-child:not(.square-icon){margin-left:auto;color:#95a6b0;font:800 10px ui-monospace,monospace}.square-icon{font-size:20px;text-align:center;width:22px;color:#c1a185}.sidebar-bottom{margin-top:auto;padding:18px 12px 0;border-top:1px solid #33414c}.readiness{margin-top:15px;font-size:11px}.readiness b{font-size:11px}.sidebar-bottom p{font-size:11px;line-height:1.8;color:#8c9fa9}.mini-info{font:700 10px ui-monospace,monospace;color:#788996;margin-top:16px}.workspace{min-width:0;padding:26px 25px 20px;background:#111a20}.overview{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}.overview h1{font-size:27px;line-height:1.15;margin:8px 0 5px;font-weight:900;letter-spacing:-.75px}.overview p{margin:0;font-size:12px;color:#8c9faa}.overview-actions{display:flex;align-items:center;gap:11px}.source-pill{font-size:10px;font-weight:900;border:1px solid #53616b;padding:11px 13px;color:#d3b394;white-space:nowrap;letter-spacing:.5px}.button{background:#c9a184;border:1px solid #c9a184;color:#182127;padding:11px 13px;font-size:10px;font-weight:950;letter-spacing:.7px;white-space:nowrap}.button:hover{background:#e1b18d}.button.secondary{background:#28343c;border-color:#50606c;color:#e7edf1}.button.secondary:hover{background:#394c58}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #38454f;margin-bottom:17px;background:#1b262d}.stat{padding:18px 18px 15px;min-height:100px;border-right:1px solid #38454f;min-width:0}.stat:last-child{border-right:0}.stat>span{font-size:9px;letter-spacing:1.1px;color:#a1b0bb;font-weight:850}.stat>div{display:flex;align-items:baseline;gap:11px;margin-top:9px;flex-wrap:wrap}.stat strong{font-size:30px;line-height:1;font-weight:950;letter-spacing:-1px}.stat small{font-size:9px;color:#8498a5;font-weight:900;letter-spacing:.4px}.stat .stat-status{font-size:12px;letter-spacing:.3px;color:#dbb28e}.map-panel{border:1px solid #41515c;background:#19252d}.panel-top{height:58px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 17px;border-bottom:1px solid #41515c;background:#212e36}.panel-top>div:first-child{display:flex;flex-direction:column;gap:5px}.panel-top b{font-size:12px;letter-spacing:1px;font-weight:950}.panel-top span{font-size:9px;color:#91a3ad;font-weight:900;letter-spacing:1px}.map-actions{display:flex;gap:5px;flex-wrap:wrap}.map-actions button{border:1px solid #536470;background:#293942;padding:8px 10px;color:#dce3e7;font-size:9px;font-weight:900;letter-spacing:.3px}.map-actions button:hover{background:#425461}.map-area{height:clamp(380px,51vh,665px);position:relative;overflow:hidden;background:#1d3038;touch-action:none}.map-area canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair}.map-title,.map-coord,.map-legend,.map-zoom{position:absolute;pointer-events:none}.map-title{top:18px;left:18px;display:flex;flex-direction:column;gap:6px}.map-title strong{font-size:15px;font-weight:950;letter-spacing:.8px;text-shadow:0 2px 8px #10161b}.map-title small{font-size:10px;color:#bed0d7;font-weight:800}.map-corner-tag{font-size:9px;color:#ecd1bb;background:#5c4c40;border:1px solid #96806c;padding:6px 8px;width:max-content;font-weight:900;letter-spacing:.7px}.map-coord{bottom:57px;left:18px;display:flex;flex-direction:column;gap:6px;background:#16222bdc;border:1px solid #4d6572;padding:10px 14px 10px 15px}.map-coord b{font:800 11px ui-monospace,monospace}.map-coord small{font-size:8px;color:#adc0cb;font-weight:850;letter-spacing:.55px}.coordinate-mark{height:2px;width:30px;background:#d0a784}.map-zoom{right:18px;top:19px;display:flex;flex-direction:column;pointer-events:auto}.map-zoom button{width:37px;height:37px;border:1px solid #6b7d87;background:#182730;color:#f4f5f5;font-size:20px;font-weight:700}.map-zoom button+button{border-top:0}.map-zoom button:hover{background:#364854}.map-legend{bottom:13px;right:13px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;background:#132029ee;border:1px solid #475c6a;padding:10px 13px;font-size:10px;color:#d1dce2;font-weight:750}.map-legend i{font-style:normal;font-size:16px;margin-right:5px}.legend-plane{color:#f4eedc}.legend-drone{color:#e6a36d}.legend-live{color:#9dbfd9}.map-footer{height:44px;padding:0 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#9fb0bb;font-size:9px;font-weight:900;letter-spacing:.6px}.map-footer b{color:#cbdad2;font-size:10px}.map-footer em{color:#dbab83;font-style:normal;padding:0 4px}.bottom-strip{margin-top:17px;border:1px solid #34444f;background:#1b262d}.strip-head{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #34444f}.strip-head b{font-size:10px;letter-spacing:1.1px}.strip-head span{font-size:9px;color:#8e9fa9;font-weight:900}.log-body{padding:13px 15px;display:flex;flex-direction:column;gap:8px;max-height:104px;overflow:auto}.log-entry{display:flex;align-items:center;gap:15px;font-size:11px;color:#a4b7c1}.log-entry time{font:700 10px ui-monospace,monospace;color:#d2a989}.inspector{background:#1a242b;border-left:1px solid #34434d;display:flex;flex-direction:column;min-height:0;max-height:calc(100vh - 76px)}.inspector-head{padding:25px 20px 18px;border-bottom:1px solid #3c4a53}.inspector-head h2{font-size:18px;margin:7px 0 6px}.inspector-head p{font-size:11px;color:#94a5b1;line-height:1.5;margin:0}.detail-panel{margin:18px 17px;background:#223039;border:1px solid #435460;padding:17px;min-height:219px}.track-name{font-size:22px;font-weight:950;letter-spacing:.5px;margin-bottom:5px}.track-type{color:#c5b39f;font-weight:900;font-size:10px;letter-spacing:1px}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px 9px;margin-top:22px}.details-grid label{display:block;font-size:9px;color:#8fa1ad;letter-spacing:.6px;font-weight:850}.details-grid b{display:block;margin-top:6px;font:800 13px ui-monospace,monospace;color:#edf2f4}.track-note{font-size:10px;color:#b1c0c9;line-height:1.65;margin-top:18px;border-top:1px solid #455761;padding-top:11px}.empty-detail{font-size:12px;line-height:1.8;color:#a1b4be}.registry-head{display:flex;justify-content:space-between;align-items:center;padding:15px 18px 12px;border-top:1px solid #374650}.registry-head b{font-size:10px;letter-spacing:.8px}.registry-head span{font-size:9px;color:#98a9b4;font-weight:850}.tabs{padding:0 18px;display:flex;gap:5px;margin-bottom:6px}.tab{border:1px solid #45545f;background:#25333c;color:#abbcc6;font-size:9px;font-weight:900;padding:9px 10px;flex:1}.tab.active{color:#111b22;background:#d1a985;border-color:#d1a985}.registry{padding:5px 17px 20px;overflow-y:auto;flex:1;min-height:180px}.track-row{width:100%;text-align:left;display:flex;justify-content:space-between;gap:10px;border:1px solid #354753;background:#23313a;color:#e8edf0;padding:12px;margin-bottom:7px}.track-row:hover,.track-row.on{border-color:#c5a17f;background:#34444d}.track-row .track-symbol{display:inline-grid;place-items:center;width:23px;height:24px;font-size:19px;margin-right:6px;color:#f0dec6}.track-row .track-symbol.drone{color:#e8a36d}.track-row strong{font-size:11px;font-weight:950}.track-row p{font-size:9px;color:#92a6b2;margin:5px 0 0}.track-row small{color:#bda58b;font:800 9px ui-monospace,monospace}.disclaimer{border-top:1px solid #394852;font-size:10px;line-height:1.6;color:#8ea0aa;padding:13px 18px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.modal-head h2{margin:0}.modal-head button{border:0;background:none;font-size:20px;color:#edf2f4}dialog{max-width:560px;width:calc(100% - 28px);background:#1c2a33;color:#f0f3f4;border:1px solid #73848e;padding:22px}dialog::backdrop{background:#05090dba}dialog p{line-height:1.65;font-size:13px;color:#a9bbc5}.diag-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.diag-grid>div{background:#2b3a44;padding:12px;font-size:11px}.diag-grid b{display:block;margin-top:7px;color:#e7c3a4;font-size:12px}@media(max-width:1400px){.layout{grid-template-columns:192px minmax(400px,1fr)280px}.head-center{display:none}.workspace{padding:22px 16px}.stat{padding:14px 12px}.stat small{display:none}.map-actions button{padding:8px 7px}.map-footer>span:nth-child(2){display:none}}@media(max-width:1050px){.layout{grid-template-columns:185px minmax(0,1fr)}.inspector{grid-column:1/-1;max-height:none;display:grid;grid-template-columns:1fr 1fr;align-content:start}.inspector-head,.detail-panel{grid-column:1}.registry-head,.tabs,.registry,.disclaimer{grid-column:2}.inspector-head{padding:18px}.registry{max-height:280px}.sidebar-bottom p{font-size:10px}.map-area{height:56vh}}@media(max-width:720px){.masthead{height:67px;padding:0 12px}.brand{min-width:0}.brand strong{font-size:18px}.brand small{font-size:8px}.mark{width:38px;height:38px}.clock{display:none}.layout{display:block}.sidebar{padding:8px;display:flex;flex-direction:row;flex-wrap:wrap}.sidebar-top,.group-heading,.sidebar-bottom{display:none}.side-item{width:auto;height:37px;font-size:10px;padding:0 10px;gap:5px}.side-item b{display:none}.workspace{padding:14px 10px}.overview{align-items:start;flex-direction:column}.overview h1{font-size:24px}.overview-actions{width:100%;justify-content:space-between}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{min-height:81px;border-bottom:1px solid #38454f}.stat:nth-child(2){border-right:0}.stat:nth-child(n+3){border-bottom:0}.stat strong{font-size:24px}.panel-top{height:auto;padding:13px;align-items:start;flex-direction:column}.map-area{height:60vh;min-height:375px}.map-legend{left:8px;right:8px;bottom:8px;justify-content:space-between;gap:5px;padding:7px;font-size:8px}.map-coord{bottom:54px}.map-footer{font-size:8px}.inspector{display:block}.registry{max-height:300px}.head-right{gap:0}.connection{font-size:9px}}
+
+</style></head>
+<body>
+<div class="app">
+<header class="masthead">
+ <div class="brand"><div class="mark">A<span>∙</span></div><div><strong>AEGIS</strong><small>AIRSPACE OPERATIONS</small></div></div>
+ <div class="head-center"><span class="eyebrow">CONTROL REGION</span><b>DELHI NCR / SECTOR 01</b><span class="header-divider"></span><span class="eyebrow">ENVIRONMENT</span><b>DEMONSTRATION</b></div>
+ <div class="head-right"><div class="connection"><i id="onlineDot"></i><span id="connectionText">INITIALIZING</span></div><span class="clock" id="clock">--:--:-- IST</span></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-top"><span class="eyebrow">OPERATIONS</span><strong>MISSION CONTROL</strong></div>
+  <div class="group-heading">MONITORING</div>
+  <button class="side-item selected" data-layer="all"><span class="square-icon">◈</span> All tracks <b id="navTotal">28</b></button>
+  <button class="side-item" data-layer="aircraft"><span class="square-icon">✈</span> Aircraft <b id="navAircraft">18</b></button>
+  <button class="side-item" data-layer="drone"><span class="square-icon">◆</span> Unmanned aircraft <b id="navDrones">10</b></button>
+  <button class="side-item" data-layer="roads"><span class="square-icon">≡</span> Road reference <b>ON</b></button>
+  <div class="group-heading spaced">SYSTEM TOOLS</div>
+  <button class="side-item" id="fitButton"><span class="square-icon">⌖</span> Fit visible tracks <span>F</span></button>
+  <button class="side-item" id="diagnosticsButton"><span class="square-icon">◎</span> Diagnostics <span>↗</span></button>
+  <div class="sidebar-bottom">
+   <span class="eyebrow">SYSTEM READINESS</span>
+   <div class="readiness"><span class="live-dot"></span><b>MONITORING ACTIVE</b></div>
+   <p>Aircraft and drones are simulated. Real aircraft require a public feed. Road lines are schematic.</p>
+   <div class="mini-info">RELEASE 3.0 / DEMO BUILD</div>
+  </div>
+</aside>
+<main class="workspace">
+ <section class="overview">
+  <div><span class="eyebrow">AIRSPACE PICTURE</span><h1>Regional surveillance</h1><p>Live movement simulation · Track telemetry · Public aircraft overlay</p></div>
+  <div class="overview-actions"><span class="source-pill" id="sourcePill">LOCAL SIMULATION</span><button class="button secondary" id="flightButton">CONNECT PUBLIC FLIGHTS</button></div>
+ </section>
+ <section class="stats">
+  <div class="stat"><span>TRACKS IN VIEW</span><div><strong id="totalCount">28</strong><small>ACTIVE OBJECTS</small></div></div>
+  <div class="stat"><span>AIRCRAFT TRACKS</span><div><strong id="aircraftCount">18</strong><small>SIMULATED + LIVE</small></div></div>
+  <div class="stat"><span>DRONE TRACKS</span><div><strong id="droneCount">10</strong><small>SIMULATED UAS</small></div></div>
+  <div class="stat"><span>LIVE FLIGHT FEED</span><div><strong class="stat-status" id="feedStatus">NOT CONNECTED</strong><small>OPTIONAL PROVIDER</small></div></div>
+ </section>
+ <section class="map-panel">
+  <div class="panel-top"><div><b>GEOSPATIAL TRACKING</b><span>DELHI METROPOLITAN REGION</span></div><div class="map-actions"><button id="playButton">Ⅱ PAUSE</button><button id="planeButton">+ AIRCRAFT</button><button id="droneButton">+ DRONE</button><button id="resetButton">RESET VIEW</button></div></div>
+  <div class="map-area" id="mapArea"><canvas id="radarCanvas" aria-label="Animated aircraft and drone tracking map"></canvas>
+   <div class="map-title"><span class="map-corner-tag">REGION 01 / DEMO</span><strong>AIRSPACE VISUALIZATION</strong><small id="mapSource">28 simulated moving tracks are loaded</small></div>
+   <div class="map-coord"><span class="coordinate-mark"></span><b>28.61° N &nbsp; 77.20° E</b><small>REFERENCE MAP / NOT A LIVE SATELLITE VIEW</small></div>
+   <div class="map-zoom"><button id="zoomIn" aria-label="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out">−</button></div>
+   <div class="map-legend"><span><i class="legend-plane">✈</i> Simulated aircraft</span><span><i class="legend-drone">◆</i> Simulated drones</span><span><i class="legend-live">✈</i> Public aircraft, if available</span></div>
+  </div>
+  <div class="map-footer"><span><span class="live-dot"></span><b id="runState">SIMULATION RUNNING</b></span><span>DRAG TO PAN <em>·</em> SCROLL TO ZOOM <em>·</em> CLICK TRACK TO INSPECT</span><span id="updateTime">UPDATING…</span></div>
+ </section>
+ <section class="bottom-strip"><div class="strip-head"><b>OPERATIONS LOG</b><span id="eventCount">SYSTEM ONLINE</span></div><div id="eventLog" class="log-body"></div></section>
+</main>
+<aside class="inspector">
+  <div class="inspector-head"><span class="eyebrow">TRACK INTELLIGENCE</span><h2>Object inspector</h2><p>Choose an aircraft or drone to inspect it.</p></div>
+  <div id="detailPanel" class="detail-panel"></div>
+  <div class="registry-head"><b>ACTIVE TRACK REGISTRY</b><span id="registryCount">28 TRACKS</span></div>
+  <div class="tabs"><button class="tab active" data-registry="all">ALL</button><button class="tab" data-registry="aircraft">AIRCRAFT</button><button class="tab" data-registry="drone">DRONES</button></div>
+  <div id="registry" class="registry"></div>
+  <div class="disclaimer">All local tracks are generated for demonstration. A country label is registration metadata, not proof of origin or intent.</div>
+</aside>
+</div>
+</div>
+<dialog id="diagnostics"><div class="modal-head"><h2>Connection diagnostics</h2><button id="closeDiag" aria-label="Close">✕</button></div><p id="diagnosticsMessage"></p><div class="diag-grid" id="diagGrid"></div><button class="button" id="testBackend">RETEST BACKEND</button></dialog>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const canvas = $('radarCanvas');
+  const ctx = canvas.getContext('2d');
+  const bounds = {minLat:28.29,maxLat:28.91,minLon:76.83,maxLon:77.71};
+  const cities = [
+    ['NEW DELHI',28.6139,77.209],['DWARKA',28.5921,77.046],['ROHINI',28.7383,77.083],
+    ['GHAZIABAD',28.6692,77.4538],['NOIDA',28.5355,77.391],['GURUGRAM',28.4595,77.0266],
+    ['FARIDABAD',28.4089,77.3178],['PITAMPURA',28.705,77.13],['VASANT KUNJ',28.5286,77.1553]
+  ];
+  // Schematic corridor links rather than GPS-accurate street geometry.
+  const corridors = [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[2,7],[1,5],[6,4],[3,4],[0,8],[8,5],[7,3]];
+  const demoCallsigns=['IGO','AIC','UAE','VTI','SIA','DLH','AXB','BAW'];
+  const demoCountries=['India','India','United Arab Emirates','India','Singapore','Germany','India','United Kingdom'];
+  const demoTypes=['A320','B737-800','A321neo','B787-9','ATR 72','A350-900','B777-300','E190'];
+  const app = {objects:[],live:[],selected:'SIM-AC-001',layer:'all',registryLayer:'all',backend:false,stream:null,source:'LOCAL SIMULATION',onlineFlightStatus:'NOT CONNECTED',running:true,zoom:1,offsetX:0,offsetY:0,lastFrame:performance.now(),lastServer:0,drag:null,simTick:0,events:[]};
+  const mapSize = () => ({w:canvas.clientWidth,h:canvas.clientHeight});
+  function aircraft(i){return {id:'SIM-AC-'+String(i+1).padStart(3,'0'),callsign:demoCallsigns[i%8]+(200+i*37),type:demoTypes[i%8],country:demoCountries[i%8],kind:'aircraft',source:'SIMULATED',lat:28.37+((i*7)%17)/17*.46,lon:76.93+((i*11)%19)/19*.65,heading:(i*53+25)%360,speed:148+(i*21)%96,altitude:2700+(i*677)%7400};}
+  function drone(i){return {id:'SIM-UAS-'+String(i+1).padStart(3,'0'),callsign:'UAS-'+(410+i*13),type:i%3===0?'Fixed-wing UAS':'Quadrotor',country:'Unspecified',kind:'drone',source:'SIMULATED',lat:28.43+((i*7)%11)/11*.33,lon:76.99+((i*5)%13)/13*.54,heading:(i*67+18)%360,speed:9+i*1.9,altitude:90+i*35};}
+  function seed(){app.objects=[...Array.from({length:18},(_,i)=>aircraft(i)),...Array.from({length:10},(_,i)=>drone(i))];}
+  function log(message){const now=new Date().toLocaleTimeString('en-IN',{hour12:false,timeZone:'Asia/Kolkata'});app.events.unshift({at:now,message});app.events.length=8;$('logBody');$('eventLog').innerHTML=app.events.slice(0,3).map(x=>`<div class="log-entry"><time>${x.at}</time><span>${escapeHtml(x.message)}</span></div>`).join('');$('eventCount').textContent=app.events.length+' EVENTS';}
+  function escapeHtml(value){return String(value??'—').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function allObjects(){return [...app.objects,...app.live];}
+  function layerObjects(){return allObjects().filter(o=>app.layer==='all'||app.layer==='roads'||o.kind===app.layer);}
+  function setStatus(){
+    const a=allObjects().filter(o=>o.kind==='aircraft'),d=allObjects().filter(o=>o.kind==='drone');
+    $('totalCount').textContent=allObjects().length;$('aircraftCount').textContent=a.length;$('droneCount').textContent=d.length;
+    $('navTotal').textContent=allObjects().length;$('navAircraft').textContent=a.length;$('navDrones').textContent=d.length;
+    $('registryCount').textContent=allObjects().length+' TRACKS';
+    $('sourcePill').textContent=app.backend?'BACKEND TELEMETRY':'OFFLINE SIMULATION';
+    $('mapSource').textContent=`${app.objects.length} simulated moving tracks • ${app.live.length} public flights`;
+    $('connectionText').textContent=app.backend?'SERVER CONNECTED':'OFFLINE DEMO ACTIVE';
+    $('onlineDot').style.background=app.backend?'#a7bd99':'#d8aa7e';
+    $('feedStatus').textContent=app.onlineFlightStatus;
+    $('runState').textContent=app.running?'SIMULATION RUNNING':'SIMULATION PAUSED';
+    $('playButton').textContent=app.running?'Ⅱ PAUSE':'▶ RESUME';
+    $('updateTime').textContent='UPDATED '+new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour12:false});
+  }
+  function renderDetails(){
+    const o=allObjects().find(o=>o.id===app.selected);
+    if(!o){$('detailPanel').innerHTML='<div class="empty-detail">Select any aircraft or drone on the map or registry. Telemetry will be shown here.</div>';return;}
+    const kmh=(Number(o.speed)||0)*3.6;
+    const feet=(Number(o.altitude)||0)*3.28084;
+    const status=o.source==='SIMULATED'?'SIMULATED OBJECT':'PUBLIC FLIGHT FEED';
+    $('detailPanel').innerHTML=`<div class="track-name">${escapeHtml(o.callsign)}</div><div class="track-type">${escapeHtml(o.type)} / ${status}</div><div class="details-grid">
+      <div><label>GROUND SPEED</label><b>${Math.round(kmh)} km/h</b></div><div><label>ALTITUDE</label><b>${Math.round(feet).toLocaleString()} ft</b></div>
+      <div><label>HEADING</label><b>${Math.round(o.heading||0)}°</b></div><div><label>TRACK TYPE</label><b>${o.kind==='drone'?'DRONE':'AIRCRAFT'}</b></div>
+      <div><label>LATITUDE</label><b>${Number(o.lat).toFixed(4)}°</b></div><div><label>LONGITUDE</label><b>${Number(o.lon).toFixed(4)}°</b></div>
+      <div><label>COUNTRY METADATA</label><b>${escapeHtml(o.country)}</b></div><div><label>TRACK ID</label><b>${escapeHtml(o.id.slice(-10))}</b></div>
+    </div><div class="track-note">${o.source==='SIMULATED'?'Generated for demonstration; not a real aircraft.':'Public flight data; may be incomplete or delayed.'} Country is metadata, not a security assessment.</div>`;
+  }
+  function renderRegistry(){
+    const list=allObjects().filter(o=>app.registryLayer==='all'||o.kind===app.registryLayer);
+    $('registry').innerHTML=list.slice(0,70).map(o=>`<button class="track-row ${o.id===app.selected?'on':''}" data-track="${escapeHtml(o.id)}"><div><span class="track-symbol ${o.kind==='drone'?'drone':''}">${o.kind==='drone'?'◆':'✈'}</span><strong>${escapeHtml(o.callsign)}</strong><p>${escapeHtml(o.type)} / ${escapeHtml(o.source==='SIMULATED'?'DEMO':'PUBLIC')}</p></div><small>${Math.round(o.altitude*3.28084).toLocaleString()} FT</small></button>`).join('')||'<p class="empty-detail">No tracks in this category.</p>';
+  }
+  function renderPanels(){setStatus();renderDetails();renderRegistry();}
+  function locate(o){const {w,h}=mapSize();const safeW=w-70,safeH=h-70;const scale=Math.min(safeW/(bounds.maxLon-bounds.minLon),safeH/(bounds.maxLat-bounds.minLat))*app.zoom;return {x:w/2+(o.lon-(bounds.minLon+bounds.maxLon)/2)*scale+app.offsetX,y:h/2-(o.lat-(bounds.minLat+bounds.maxLat)/2)*scale+app.offsetY};}
+  function renderMap(now){
+    const {w,h}=mapSize();if(!w||!h){return;}
+    const ratio=Math.min(2,window.devicePixelRatio||1),wantW=Math.round(w*ratio),wantH=Math.round(h*ratio);
+    if(canvas.width!==wantW||canvas.height!==wantH){canvas.width=wantW;canvas.height=wantH;}
+    ctx.setTransform(ratio,0,0,ratio,0,0);
+    ctx.fillStyle='#223640';ctx.fillRect(0,0,w,h);
+    // Land/water zones, not actual satellite imagery.
+    const bb=locate({lon:77.02,lat:28.58});ctx.fillStyle='#273c45';ctx.beginPath();ctx.ellipse(bb.x,bb.y,Math.max(150,app.zoom*260),Math.max(120,app.zoom*195),-.1,0,Math.PI*2);ctx.fill();
+    ctx.lineWidth=1;ctx.strokeStyle='#3c525e';ctx.globalAlpha=.75;
+    for(let lon=76.6;lon<=77.9;lon+=.1){let s=locate({lat:28.12,lon}),e=locate({lat:29.11,lon});ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(e.x,e.y);ctx.stroke();}
+    for(let lat=28.1;lat<=29.11;lat+=.1){let s=locate({lat,lon:76.6}),e=locate({lat,lon:77.9});ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(e.x,e.y);ctx.stroke();}
+    ctx.globalAlpha=1;
+    // Schematic road corridors.
+    for(const [a,b] of corridors){const p=locate({lat:cities[a][1],lon:cities[a][2]}),q=locate({lat:cities[b][1],lon:cities[b][2]});ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.lineCap='round';ctx.strokeStyle='#54656b';ctx.lineWidth=8;ctx.stroke();ctx.strokeStyle='#879293';ctx.lineWidth=1.5;ctx.stroke();}
+    // Regional city markers.
+    for(const [label,lat,lon] of cities){const p=locate({lat,lon});ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fillStyle='#b2c2c6';ctx.fill();ctx.strokeStyle='#26333c';ctx.lineWidth=2;ctx.stroke();ctx.font='900 10px "Segoe UI", Arial';ctx.fillStyle='#d9e5e9';ctx.fillText(label,p.x+10,p.y-9);}
+    // Reference zones.
+    const center=locate({lon:77.2,lat:28.61});ctx.beginPath();ctx.arc(center.x,center.y,Math.max(25,36*app.zoom),0,Math.PI*2);ctx.fillStyle='#af91721b';ctx.fill();ctx.strokeStyle='#d3aa78';ctx.setLineDash([5,5]);ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
+    // Every object gets a visible shape and label. High-contrast, large enough even at wide zoom.
+    for(const o of layerObjects()){
+      if(app.layer==='roads')break;
+      const p=locate(o);if(p.x < -100 || p.x>w+100 || p.y < -100 || p.y>h+100)continue;
+      const selected=o.id===app.selected,dr=o.kind==='drone',live=o.source!=='SIMULATED';
+      const color=live?'#9dc9e4':dr?'#f2ac78':'#f4ebd2';
+      const angle=(Number(o.heading)||0)*Math.PI/180;
+      // Last-course projection (demo only), not prediction of a safety threat.
+      if(!dr){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x+Math.sin(angle)*32,p.y-Math.cos(angle)*32);ctx.strokeStyle=color;ctx.globalAlpha=.45;ctx.setLineDash([4,4]);ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);ctx.globalAlpha=1;}
+      if(selected){ctx.beginPath();ctx.arc(p.x,p.y,24+Math.sin(now/350)*2,0,Math.PI*2);ctx.strokeStyle='#eed1a6';ctx.lineWidth=1.7;ctx.stroke();}
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(angle);
+      ctx.shadowColor='#0b1015';ctx.shadowBlur=4;ctx.lineJoin='round';ctx.lineWidth=2.6;ctx.strokeStyle='#0d171d';ctx.fillStyle=color;
+      ctx.beginPath();if(dr){ctx.moveTo(0,-12);ctx.lineTo(10,8);ctx.lineTo(-10,8);}else{
+        ctx.moveTo(0,-16);ctx.lineTo(3.4,-5);ctx.lineTo(15,3);ctx.lineTo(15,7);ctx.lineTo(3,4);ctx.lineTo(2.5,13);ctx.lineTo(6,16);ctx.lineTo(6,18);ctx.lineTo(0,16);ctx.lineTo(-6,18);ctx.lineTo(-6,16);ctx.lineTo(-2.5,13);ctx.lineTo(-3,4);ctx.lineTo(-15,7);ctx.lineTo(-15,3);ctx.lineTo(-3.4,-5);}
+      ctx.closePath();ctx.stroke();ctx.fill();ctx.restore();
+      ctx.font='900 11px ui-monospace, Consolas, monospace';ctx.strokeStyle='#14232c';ctx.lineWidth=4;ctx.strokeText(o.callsign,p.x+20,p.y-12);ctx.fillStyle='#f6f4eb';ctx.fillText(o.callsign,p.x+20,p.y-12);
+    }
+    // Crosshair center marking.
+    ctx.strokeStyle='#a1afb233';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(w/2-9,h/2);ctx.lineTo(w/2+9,h/2);ctx.moveTo(w/2,h/2-9);ctx.lineTo(w/2,h/2+9);ctx.stroke();
+  }
+  function paint(now){renderMap(now);requestAnimationFrame(paint);}
+  function moveOffline(){
+    if(app.backend||!app.running)return;
+    app.simTick++;
+    for(const o of app.objects){
+      const n=parseInt(o.id.match(/(\d+)$/)?.[1]||'4',10);
+      o.heading=(o.heading+(o.kind==='drone'?1.9:.36)*Math.sin((app.simTick+n*3)/22)+360)%360;
+      const step=o.speed/111320, angle=o.heading*Math.PI/180;
+      o.lat+=step*Math.cos(angle);o.lon+=step*Math.sin(angle)/Math.cos(o.lat*Math.PI/180);
+      if(o.lat<bounds.minLat||o.lat>bounds.maxLat||o.lon<bounds.minLon||o.lon>bounds.maxLon){o.lat=Math.max(bounds.minLat,Math.min(bounds.maxLat,o.lat));o.lon=Math.max(bounds.minLon,Math.min(bounds.maxLon,o.lon));o.heading=(o.heading+180)%360;}
+    }
+    renderDetails();
+  }
+  function applySnapshot(snapshot){if(!Array.isArray(snapshot.objects)||!snapshot.objects.length)return;app.backend=true;app.objects=snapshot.objects;app.running=!!snapshot.running;app.lastServer=Date.now();renderPanels();}
+  async function fetchJSON(url,options={},timeoutMs=2500){const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),timeoutMs);try{const resp=await fetch(url,{...options,signal:controller.signal,cache:'no-store'});if(!resp.ok)throw Error('HTTP '+resp.status);return await resp.json();}finally{clearTimeout(timeout)}}
+  async function attachBackend(){
+    if(location.protocol==='file:'){log('Standalone file opened: offline simulation is running.');return;}
+    try{
+      const resp=await fetchJSON('/api/objects');applySnapshot(resp);log('Connected to Node.js telemetry backend.');
+      if(window.EventSource){
+        if(app.stream)app.stream.close();
+        app.stream=new EventSource('/api/events');
+        app.stream.onmessage=e=>{try{applySnapshot(JSON.parse(e.data));}catch(err){console.warn('Stream parse failure',err)}};
+        app.stream.onerror=()=>{if(Date.now()-app.lastServer>4500){app.backend=false;setStatus();}};
+      }else{setInterval(async()=>{try{applySnapshot(await fetchJSON('/api/objects'))}catch{app.backend=false;setStatus()}},1500);}
+    }catch(e){app.backend=false;setStatus();log('Backend unavailable. Local moving aircraft and drones remain active.');}
+  }
+  async function control(action){
+    if(app.backend){try{const data=await fetchJSON('/api/control',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action})});applySnapshot(data);return;}catch(e){app.backend=false;log('Backend disconnected. Continuing with local simulation.');}}
+    if(action==='pause')app.running=false;
+    if(action==='play')app.running=true;
+    if(action==='add-aircraft'){const o=aircraft(app.objects.filter(x=>x.kind==='aircraft').length);o.id='SIM-AC-EXTRA-'+Date.now();o.lat=28.58;o.lon=77.1;app.objects.push(o);app.selected=o.id;}
+    if(action==='add-drone'){const o=drone(app.objects.filter(x=>x.kind==='drone').length);o.id='SIM-UAS-EXTRA-'+Date.now();o.lat=28.67;o.lon=77.28;app.objects.push(o);app.selected=o.id;}
+    renderPanels();
+  }
+  async function loadFlights(){
+    $('flightButton').disabled=true;app.onlineFlightStatus='CONNECTING';setStatus();
+    try{
+      const data=await fetchJSON('/api/live-aircraft',{},8500);app.live=Array.isArray(data.objects)?data.objects:[];
+      app.onlineFlightStatus=app.live.length?'LIVE: '+app.live.length:(data.status||'NO AIRCRAFT');
+      log(app.live.length?`${app.live.length} public flight positions loaded.`:'No public flights available. Simulated aircraft remain visible.');
+    }catch(e){app.live=[];app.onlineFlightStatus='UNAVAILABLE';log('Public flight service unavailable. Demo flights still moving.');}
+    $('flightButton').disabled=false;renderPanels();
+  }
+  function select(id){app.selected=id;renderPanels();const obj=allObjects().find(x=>x.id===id);if(obj){const p=locate(obj),{w,h}=mapSize();app.offsetX+=w/2-p.x;app.offsetY+=h/2-p.y;}}
+  function configure(){
+    document.querySelectorAll('[data-layer]').forEach(btn=>btn.addEventListener('click',()=>{app.layer=btn.dataset.layer;document.querySelectorAll('[data-layer]').forEach(x=>x.classList.toggle('selected',x===btn));}));
+    document.querySelectorAll('[data-registry]').forEach(btn=>btn.addEventListener('click',()=>{app.registryLayer=btn.dataset.registry;document.querySelectorAll('[data-registry]').forEach(x=>x.classList.toggle('active',x===btn));renderRegistry()}));
+    $('registry').addEventListener('click',e=>{const row=e.target.closest('[data-track]');if(row)select(row.dataset.track)});
+    $('playButton').onclick=()=>{control(app.running?'pause':'play').then(()=>log(app.running?'Simulation resumed.':'Simulation paused.'));};
+    $('planeButton').onclick=()=>control('add-aircraft').then(()=>log('Additional simulated aircraft introduced.'));
+    $('droneButton').onclick=()=>control('add-drone').then(()=>log('Additional simulated drone introduced.'));
+    $('flightButton').onclick=loadFlights;
+    const fit=()=>{app.zoom=1;app.offsetX=0;app.offsetY=0;};
+    $('resetButton').onclick=fit;$('fitButton').onclick=fit;
+    $('zoomIn').onclick=()=>app.zoom=Math.min(5,app.zoom*1.25);
+    $('zoomOut').onclick=()=>app.zoom=Math.max(.55,app.zoom/1.25);
+    canvas.addEventListener('wheel',e=>{e.preventDefault();app.zoom=Math.max(.55,Math.min(5,app.zoom*(e.deltaY<0?1.12:.89)));},{passive:false});
+    canvas.addEventListener('pointerdown',e=>{app.drag={x:e.clientX,y:e.clientY,dx:app.offsetX,dy:app.offsetY,moved:false};canvas.setPointerCapture(e.pointerId)});
+    canvas.addEventListener('pointermove',e=>{if(!app.drag)return;const dx=e.clientX-app.drag.x,dy=e.clientY-app.drag.y;if(Math.hypot(dx,dy)>4)app.drag.moved=true;app.offsetX=app.drag.dx+dx;app.offsetY=app.drag.dy+dy;});
+    canvas.addEventListener('pointerup',e=>{const d=app.drag;if(d&&!d.moved){const box=canvas.getBoundingClientRect(),x=e.clientX-box.left,y=e.clientY-box.top;let nearest=null,dist=29;for(const o of layerObjects()){if(app.layer==='roads')continue;const p=locate(o),r=Math.hypot(p.x-x,p.y-y);if(r<dist){nearest=o;dist=r;}}if(nearest)select(nearest.id);}app.drag=null;});
+    document.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='f'&&!e.ctrlKey&&!e.metaKey)fit()});
+    $('diagnosticsButton').onclick=()=>{updateDiag();$('diagnostics').showModal();};
+    $('closeDiag').onclick=()=>$('diagnostics').close();
+    $('testBackend').onclick=async()=>{await attachBackend();updateDiag();};
+  }
+  function updateDiag(){const count=allObjects().length; $('diagnosticsMessage').textContent='The simulation does not depend on a live aviation service. If the server disconnects, you should still see moving aircraft and drones. Open the website from localhost for backend telemetry, or open index.html directly for offline demonstration.';
+    $('diagGrid').innerHTML=`<div>TRACKS LOADED<b>${count}</b></div><div>SERVER CONNECTION<b>${app.backend?'CONNECTED':'LOCAL FALLBACK'}</b></div><div>AIRCRAFT<b>${allObjects().filter(x=>x.kind==='aircraft').length}</b></div><div>DRONES<b>${allObjects().filter(x=>x.kind==='drone').length}</b></div><div>PUBLIC FLIGHT SERVICE<b>${escapeHtml(app.onlineFlightStatus)}</b></div><div>SIMULATION<b>${app.running?'RUNNING':'PAUSED'}</b></div>`;
+  }
+  function clock(){const time=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata',hour12:false});$('clock').textContent=time+' IST';}
+  seed();configure();renderPanels();clock();setInterval(clock,1000);log('Tracking engine loaded: 18 aircraft + 10 drones (simulated).');
+  requestAnimationFrame(paint);setInterval(moveOffline,1000);setInterval(()=>{if(app.backend&&Date.now()-app.lastServer>6500){app.backend=false;setStatus();log('Live stream interrupted; local movement continuing.');}setStatus()},2000);
+  attachBackend();
+})();
+
+</script>
+</body></html>
